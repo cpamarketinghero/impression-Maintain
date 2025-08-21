@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Counter with Redirect</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      background-color: #ff0000; /* red button */
+      color: white;
+      border: none;
+      padding: 20px 80px; /* big length */
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #cc0000; /* darker red when hover */
+    }
+    #output {
+      margin-bottom: 25px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ff00; /* neon green like screenshot */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="output">Click --> 0</div>
+  <button id="clickBtn">Submit Click</button>
+
+  <script>
+    let count = 0;
+    const button = document.getElementById("clickBtn");
+    const output = document.getElementById("output");
+
+    button.addEventListener("click", () => {
+      count++;
+      output.innerText = `Click --> ${count}`;
+      // open m.facebook every click
+      window.open("https://m.facebook.com", "_blank");
+    });
+  </script>
+
+</body>
+</html>
